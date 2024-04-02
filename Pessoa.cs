@@ -36,3 +36,22 @@ public class Estudante : Pessoa {
         set {curso = value; }
     }
 }
+public class funcionario : Pessoa {
+    private double salario;
+
+    //Metodo para celular o bônus
+    public double Bonus() {
+        return salario * 0.1; //10% de bônus padrão sobre o salário
+    }
+
+    //Construtor da classe Estudante
+    public funcionario(string nome, int idade, string cpf, double salario) : base(nome, idade, cpf){
+        salario = salario;
+        }
+
+        //Propriedades da classe Estudante que permite acesso controlado a um campo privado
+        public string Salario {
+            get { return salario; }
+            set { salario = value; }
+            }
+        }
