@@ -13,7 +13,7 @@ public class Personagem
     private string[] armasEquipamentos;
 
     // Construtor da classe Personagem
-    public Personagem(string nome, int nivel, double pontuacao, double vida, double forca, double agilidade, double inteligencia, string[] armasequipamentos)
+    public Personagem(string nome, int nivel, double pontuacao, double vida, double forca, double agilidade, double inteligencia, string[] armasEquipamentos)
     {
         this.nome = nome;
         this.nivel = nivel;
@@ -90,8 +90,8 @@ public class Personagem
     }
     // Métodos
     // Exemplo de método para mover o personagem
-    public void Mover(string direcao, double dintancia){
-        Console.WriteLine($"{GetNome()} esta se movendo na direcao {direcao} por {dintancia} passos.");
+    public void Mover(string direcao, double distancia){
+        Console.WriteLine($"{GetNome()} esta se movendo na direcao {direcao} por {distancia} passos.");
     }
     // Exemplo de método para atacar outro personagem
     public void Atacar(Personagem alvo){
@@ -126,14 +126,14 @@ class Program{
         Personagem batman = new Personagem("Batman", 1, 0, 100, 90, 80, 100, new string[] {"Multi-Batarangue", "Lançador de Gel", "Bomba de fumaça", "Ultra Bat-Garra", "Sintetizador de Voz" });
         // Exibindo informações do personagem Batman
         Console.WriteLine("Personagem Heroi");
-        Console.WriteLine($"Nome: {batman.GetNome ()}");
+        Console.WriteLine($"Nome: {batman.GetNome()}");
         Console.WriteLine($"Nivel: {batman.GetNivel()}");
-        Console.WriteLine($"Pontuacao do Batman: {batman.GetPontuacao ()}");
+        Console.WriteLine($"Pontuacao do Batman: {batman.GetPontuacao()}");
         Console.WriteLine($"Vida: {batman.GetVida()}");
         Console. WriteLine($"Forca: {batman.GetForca()}");
         Console.WriteLine($"Agilidade: {batman.GetAgilidade ()}");
         Console.WriteLine($"Inteligencia: {batman.GetInteligencia()}");
-        Console.WriteLine($"Armas e Equipamentos: {string.Join(", ", batman.GetArmasEquipamentos ())}");
+        Console.WriteLine($"Armas e Equipamentos: {string.Join(", ", batman.GetArmasEquipamentos())}");
         Console.WriteLine("");
         Console. WriteLine("---------------------------------------------------------");
         Console.WriteLine("");
@@ -141,45 +141,45 @@ class Program{
         Personagem coringa = new Personagem("Coringa", 1, 0, 100, 70, 65, 85, new string[] {"Gas do Riso", "Flores que Esguicham Acido", "Baralhas de Carta", "Luva de Choque" });
         // Exibindo informações do personagem Coringa
         Console. WriteLine("Personagem Inimigo");
-        Console. WriteLine($"Nome: {coringa.GetNome ()}");
+        Console. WriteLine($"Nome: {coringa.GetNome()}");
         Console. WriteLine($"Nivel: {coringa.GetNivel()}");
-        Console.WriteLine($"Pontuacao do Coringa: {coringa.GetPontuacao ()}");
+        Console.WriteLine($"Pontuacao do Coringa: {coringa.GetPontuacao()}");
         Console.WriteLine($"Vida: {coringa.GetVida()}");
         Console. WriteLine($"Forca: {coringa.GetForca()}");
         Console.WriteLine($"Agilidade: {coringa.GetAgilidade ()}");
         Console. WriteLine($"Inteligencia: {coringa.GetInteligencia()}");
-        Console. WriteLine($"Armas e Equipamentos: {string. Join(", ", coringa.GetArmasEquipamentos())}");
+        Console. WriteLine($"Armas e Equipamentos: {string.Join(", ", coringa.GetArmasEquipamentos())}");
         Console.WriteLine("");
         Console.WriteLine("-------------------------------------------------------------");
         Console. WriteLine("");
 
         // Batman movendo
-        batman. Mover("norte", 10);
+        batman.Mover("norte", 10);
         // Coringa movendo
         coringa.Mover("sul", 10);
         // Batman batendo no Coringa
-        batman. Atacar (coringa) ;
+        batman.Atacar(coringa) ;
         // Batman usando uma habilidade
-        batman. UsarHabilidade("Multi-Batarangue", coringa);
+        batman.UsarHabilidade("Multi-Batarangue", coringa);
         // Coringa Recebendo dano
         coringa.ReceberDano(50);
         // Batman ganha pontos
-        batman. SetPontuacao(50);
-        Console.WriteLine($"Pontuacao do Batman: {batman.GetPontuacao ()}");
+        batman.SetPontuacao(50);
+        Console.WriteLine($"Pontuacao do Batman: {batman.GetPontuacao()}");
         // Coringa usando uma habilidade
         coringa.UsarHabilidade("Gas do Riso", batman);
         // Coringa ganha pontos
-        coringa. SetPontuacao(30);
-        Console. WriteLine($"Pontuacao do Coringa: {coringa.GetPontuacao()}");
+        coringa.SetPontuacao(30);
+        Console.WriteLine($"Pontuacao do Coringa: {coringa.GetPontuacao()}");
         // Batman usando uma habilidade
-        batman. UsarHabilidade("Ultra Bat-Garra", coringa);
+        batman.UsarHabilidade("Ultra Bat-Garra", coringa);
         // Coringa Morrendo
-        coringa. ReceberDano(999); // Para simular a morte
+        coringa.ReceberDano(999); // Para simular a morte
         // Batman ganha pontos
-        batman. SetPontuacao(100);
-        Console. WriteLine($"Pontuacao do Batman: {batman.GetPontuacao ()}");
+        batman.SetPontuacao(100);
+        Console.WriteLine($"Pontuacao do Batman: {batman.GetPontuacao()}");
         // Subindo de nível após matar Coringa
-        batman. SubirDeNivel();
-        Console. ReadLine();
+        batman.SubirDeNivel();
+        Console.ReadLine();
     }
 }
